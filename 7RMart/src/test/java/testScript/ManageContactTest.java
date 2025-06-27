@@ -1,18 +1,23 @@
 package testScript;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
 import pages.ManageContactPage;
+import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base{
 	
 	@Test
-	public void addContactInfo() {
+	public void addContactInfo() throws IOException {
 		
-		String username = "admin";
-		String password = "admin";
+		//String username = "admin";
+		//String password = "admin";
+		String username = ExcelUtility.getStringData(1, 0, "loginpage");
+		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
