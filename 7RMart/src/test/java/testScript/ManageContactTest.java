@@ -5,29 +5,41 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pages.AdminUserPage;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageContactPage;
 import utilities.ExcelUtility;
 
-public class ManageContactTest extends Base{
+public class ManageContactTest extends Base {
 	
+	public ManageContactPage managecontactpage;
+	public HomePage homepage;
+
 	@Test
 	public void addContactInfo() throws IOException {
-		
-		//String username = "admin";
-		//String password = "admin";
+
+		// String username = "admin";
+		// String password = "admin";
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
-		loginpage.enterThePassword(password);
-		loginpage.clickOnSignin();
-		
+		loginpage.enterTheUsername(username).enterThePassword(password);
+		homepage = loginpage.clickOnSignin();
+		managecontactpage = homepage.clickManageContact();
 		String userphone = "2345654356";
 		String useremail = "sony@gmail.com";
 		String useraddress = "FlatNo.300 Trivandrum";
 		String time = "1-2pm";
 		String charge = "20";
+		managecontactpage.clickTheAction().addPhoneNo(userphone).addEmail(useremail).addAddress(useraddress).addDeliveryTime(time).addDeliveryCharge(charge).clickUpdate();
+		
+		
+		/*loginpage.enterTheUsername(username);
+		loginpage.enterThePassword(password);
+		loginpage.clickOnSignin();
+
+		
 		ManageContactPage managecontact = new ManageContactPage(driver);
 		managecontact.clickManageContact();
 		managecontact.clickTheAction();
@@ -36,28 +48,31 @@ public class ManageContactTest extends Base{
 		managecontact.addAddress(useraddress);
 		managecontact.addDeliveryTime(time);
 		managecontact.addDeliveryCharge(charge);
-		managecontact.clickUpdate();
-			
+		managecontact.clickUpdate();*/
+
 	}
-	
+
 	@Test
 	public void isUpdateDisplayed() {
-		
+
 		String username = "admin";
 		String password = "admin";
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUsername(username).enterThePassword(password);
+		homepage = loginpage.clickOnSignin();
+		managecontactpage = homepage.clickManageContact();
+		managecontactpage.clickTheAction();
+		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();
-		
+
 		ManageContactPage managecontact = new ManageContactPage(driver);
 		managecontact.clickManageContact();
-		managecontact.clickTheAction();
-		
-		
-		boolean updatepresent = managecontact.isUpdateDislayed();
+		managecontact.clickTheAction();*/
+
+		boolean updatepresent = managecontactpage.isUpdateDislayed();
 		Assert.assertTrue(updatepresent);
-		
+
 	}
 
 }

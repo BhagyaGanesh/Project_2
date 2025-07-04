@@ -6,43 +6,44 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ManageNewsUpdatePage {
+
+	public WebDriver driver;
+
 	
-    public WebDriver driver; 
-	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[7]") WebElement moreinfo;
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/edit?edit=6382&page_ad=1']") WebElement action;
-	@FindBy(xpath="//textarea[@id='news']") WebElement news;
-	@FindBy(xpath="//button[@type='submit']") WebElement update;
-	
+	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/news/edit?edit=6382&page_ad=1']")
+	WebElement action;
+	@FindBy(xpath = "//textarea[@id='news']")
+	WebElement news;
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement update;
+
 	public ManageNewsUpdatePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+
 	
-	public void clickTheMoreInfo() {
-		moreinfo.click();
-		
-	}
-	
-	public void clickTheActions() {
+
+	public ManageNewsUpdatePage clickTheActions() {
 		action.click();
-		
+		return this;
+
 	}
-	
-	public void enterNews(String updatenews) {
+
+	public ManageNewsUpdatePage enterNews(String updatenews) {
 		news.sendKeys(updatenews);
-		
+		return this;
+
 	}
-	
-	public void saveNews() {
+
+	public ManageNewsUpdatePage saveNews() {
 		update.click();
-		
-		
+		return this;
+
 	}
-	
+
 	public boolean isUpdateDislayed() {
 		return update.isDisplayed();
 	}
-
 
 }

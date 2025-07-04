@@ -8,72 +8,82 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.PageUtility;
 
 public class ManageContactPage {
-	
+
 	public WebDriver driver;
+
 	
-	@FindBy(xpath="//p[text()='Manage Contact']") WebElement managecontact;
-	@FindBy(xpath="//i[@class='fas fa-edit']") WebElement action;
-	@FindBy(xpath="//input[@id='phone']") WebElement phone;
-	@FindBy(xpath="//input[@id='email']") WebElement email;
-	@FindBy(xpath="//textarea[@id='content']") WebElement address;
-	@FindBy(xpath="//textarea[@name='del_time']") WebElement deliverytime;
-	@FindBy(xpath="//input[@name='del_limit']") WebElement deliverycharge;
-	@FindBy(xpath="//button[@type='submit']") WebElement update;
-	
+	@FindBy(xpath = "//i[@class='fas fa-edit']")
+	WebElement action;
+	@FindBy(xpath = "//input[@id='phone']")
+	WebElement phone;
+	@FindBy(xpath = "//input[@id='email']")
+	WebElement email;
+	@FindBy(xpath = "//textarea[@id='content']")
+	WebElement address;
+	@FindBy(xpath = "//textarea[@name='del_time']")
+	WebElement deliverytime;
+	@FindBy(xpath = "//input[@name='del_limit']")
+	WebElement deliverycharge;
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement update;
+
 	public ManageContactPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickManageContact() {
-		managecontact.click();
-		
-	}
 	
-	public void clickTheAction() {
+	public ManageContactPage clickTheAction() {
 		action.click();
-		
+		return this;
+
 	}
-	
-	public void addPhoneNo(String userphone) {
+
+	public ManageContactPage addPhoneNo(String userphone) {
 		phone.clear();
 		phone.sendKeys(userphone);
-		
+		return this;
+
 	}
-	
-	public void addEmail(String useremail) {
+
+	public ManageContactPage addEmail(String useremail) {
 		email.clear();
 		email.sendKeys(useremail);
-		
+		return this;
+
 	}
-	
-	public void addAddress(String useraddress) {
+
+	public ManageContactPage addAddress(String useraddress) {
 		address.clear();
 		address.sendKeys(useraddress);
-		
-		
+		return this;
+
 	}
-	public void addDeliveryTime(String time) {
-		
+
+	public ManageContactPage addDeliveryTime(String time) {
+
 		deliverytime.clear();
 		deliverytime.sendKeys(time);
+		return this;
 	}
-	
-    public void addDeliveryCharge(String charge) {
-		
-    	deliverycharge.clear();
-    	deliverycharge.sendKeys(charge);
+
+	public ManageContactPage addDeliveryCharge(String charge) {
+
+		deliverycharge.clear();
+		deliverycharge.sendKeys(charge);
+		return this;
 	}
-    
-   public void clickUpdate() {
-	   
-	   PageUtility page=new PageUtility();
-	   page.javaSriptClick(driver, update);
-	   //update.click();
-    	
+
+	public ManageContactPage clickUpdate() {
+
+		PageUtility page = new PageUtility();
+		page.javaSriptClick(driver, update);
+		// update.click();
+		return this;
+
 	}
-   
-   public boolean isUpdateDislayed() {
+
+	public boolean isUpdateDislayed() {
 		return update.isDisplayed();
 	}
 

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-27T19:06:44 IST" name="ParallelTesting_Test" finished-at="2025-06-27T19:06:54 IST" duration-ms="9645">
+  <suite started-at="2025-07-02T21:14:05 IST" name="Suite" finished-at="2025-07-02T21:14:54 IST" duration-ms="48782">
     <groups>
+      <group name="Regression">
+        <method signature="LoginTest.verifyTheUserIsAbleToLoginUsingValidCredentials()[pri:0, instance:testScript.LoginTest@3f4faf53]" name="verifyTheUserIsAbleToLoginUsingValidCredentials" class="testScript.LoginTest"/>
+      </group> <!-- Regression -->
     </groups>
-    <test started-at="2025-06-27T19:06:44 IST" name="EdgeTest" finished-at="2025-06-27T19:06:53 IST" duration-ms="8922">
-      <class name="testScript.ManageNewsTest">
-        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.ManageNewsTest@7586beff]" started-at="2025-06-27T19:06:44 IST" name="bowserInitialization" finished-at="2025-06-27T19:06:50 IST" duration-ms="6168" status="PASS">
+    <test started-at="2025-07-02T21:14:05 IST" name="Test" finished-at="2025-07-02T21:14:54 IST" duration-ms="48782">
+      <class name="testScript.LoginTest">
+        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:05 IST" name="bowserInitialization" finished-at="2025-07-02T21:14:16 IST" duration-ms="10040" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +21,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bowserInitialization -->
-        <test-method signature="addNews()[pri:0, instance:testScript.ManageNewsTest@7586beff]" started-at="2025-06-27T19:06:50 IST" name="addNews" finished-at="2025-06-27T19:06:53 IST" duration-ms="2708" status="PASS">
+        <test-method signature="verifyAlertMessageIsComingOnGivingInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:16 IST" name="verifyAlertMessageIsComingOnGivingInvalidCredentials" description="Login on giving both username and password incorrect" data-provider="logindataprovider" finished-at="2025-07-02T21:14:17 IST" duration-ms="1634" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Ada]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Ala]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addNews -->
-      </class> <!-- testScript.ManageNewsTest -->
-    </test> <!-- EdgeTest -->
-    <test started-at="2025-06-27T19:06:44 IST" name="ChromeTest" finished-at="2025-06-27T19:06:54 IST" duration-ms="9645">
-      <class name="testScript.ManageNewsTest">
-        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.ManageNewsTest@3349e9bb]" started-at="2025-06-27T19:06:44 IST" name="bowserInitialization" finished-at="2025-06-27T19:06:52 IST" duration-ms="8015" status="PASS">
+        </test-method> <!-- verifyAlertMessageIsComingOnGivingInvalidCredentials -->
+        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:17 IST" name="bowserInitialization" finished-at="2025-07-02T21:14:22 IST" duration-ms="4828" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,11 +48,95 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bowserInitialization -->
-        <test-method signature="addNews()[pri:0, instance:testScript.ManageNewsTest@3349e9bb]" started-at="2025-06-27T19:06:52 IST" name="addNews" finished-at="2025-06-27T19:06:54 IST" duration-ms="1598" status="PASS">
+        <test-method signature="verifyAlertMessageIsComingOnGivingInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:22 IST" name="verifyAlertMessageIsComingOnGivingInvalidCredentials" description="Login on giving both username and password incorrect" data-provider="logindataprovider" finished-at="2025-07-02T21:14:23 IST" duration-ms="771" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mai]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[har]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addNews -->
-      </class> <!-- testScript.ManageNewsTest -->
-    </test> <!-- ChromeTest -->
-  </suite> <!-- ParallelTesting_Test -->
+        </test-method> <!-- verifyAlertMessageIsComingOnGivingInvalidCredentials -->
+        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:23 IST" name="bowserInitialization" finished-at="2025-07-02T21:14:28 IST" duration-ms="5259" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bowserInitialization -->
+        <test-method signature="verifyAlertMessageIsComingOnGivingInvalidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:28 IST" name="verifyAlertMessageIsComingOnGivingInvalidCredentials" description="Login on giving both username and password incorrect" data-provider="logindataprovider" finished-at="2025-07-02T21:14:29 IST" duration-ms="1023" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[sos]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[rai]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAlertMessageIsComingOnGivingInvalidCredentials -->
+        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:29 IST" name="bowserInitialization" finished-at="2025-07-02T21:14:37 IST" duration-ms="7738" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bowserInitialization -->
+        <test-method signature="verifyAlertMessageIsComingOnGivingInvalidPassword()[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:37 IST" name="verifyAlertMessageIsComingOnGivingInvalidPassword" description="Login on giving password incorrect" finished-at="2025-07-02T21:14:40 IST" duration-ms="3209" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAlertMessageIsComingOnGivingInvalidPassword -->
+        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:40 IST" name="bowserInitialization" finished-at="2025-07-02T21:14:46 IST" duration-ms="5517" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bowserInitialization -->
+        <test-method signature="verifyAlertMessageIsComingOnGivingInvalidUsername()[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:46 IST" name="verifyAlertMessageIsComingOnGivingInvalidUsername" description="Login on giving username incorrect" finished-at="2025-07-02T21:14:47 IST" duration-ms="1615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAlertMessageIsComingOnGivingInvalidUsername -->
+        <test-method is-config="true" signature="bowserInitialization(java.lang.String)[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:47 IST" name="bowserInitialization" finished-at="2025-07-02T21:14:53 IST" duration-ms="5726" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- bowserInitialization -->
+        <test-method signature="verifyTheUserIsAbleToLoginUsingValidCredentials()[pri:0, instance:testScript.LoginTest@3f4faf53]" started-at="2025-07-02T21:14:53 IST" name="verifyTheUserIsAbleToLoginUsingValidCredentials" finished-at="2025-07-02T21:14:54 IST" duration-ms="1275" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTheUserIsAbleToLoginUsingValidCredentials -->
+      </class> <!-- testScript.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

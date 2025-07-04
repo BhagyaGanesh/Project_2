@@ -6,29 +6,34 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.LoginPage;
-import pages.LogoutPage;
+import pages.HomePage;
 import utilities.ExcelUtility;
 
-public class LogoutTest extends Base{
+public class HomePageTest extends Base {
 	
+	public HomePage homepage;
+
 	@Test
 	public void verifyUserIsAbleToLogout() throws IOException {
-		
-		//String username = "admin";
-		//String password = "admin";
+
+		// String username = "admin";
+		// String password = "admin";
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
-		
+
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUsername(username).enterThePassword(password);
+		homepage = loginpage.clickOnSignin();
+		homepage.chooseAdmin().chooseLogout();
+		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();
-		
-		LogoutPage logoutpage = new LogoutPage(driver);
+
+		HomePage logoutpage = new HomePage(driver);
 		logoutpage.chooseAdmin();
-		logoutpage.chooseLogout();
-		
-		boolean signpage=logoutpage.signinPageDisplayed();
+		logoutpage.chooseLogout();*/
+
+		boolean signpage = homepage.signinPageDisplayed();
 		Assert.assertTrue(signpage);
 	}
 

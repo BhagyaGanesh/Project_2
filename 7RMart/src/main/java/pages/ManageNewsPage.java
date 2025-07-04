@@ -6,38 +6,41 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ManageNewsPage {
+
+	public WebDriver driver;
+
 	
-public WebDriver driver; 
-	
-	@FindBy(xpath="(//a[@class='small-box-footer'])[7]") WebElement moreinfo;
-	@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']") WebElement newnews;
-	@FindBy(xpath="//textarea[@id='news']") WebElement enternews;
-	@FindBy(xpath="//button[@type='submit']") WebElement savenews;
-	
+	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
+	WebElement newnews;
+	@FindBy(xpath = "//textarea[@id='news']")
+	WebElement enternews;
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement savenews;
+
 	public ManageNewsPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickTheMoreInfo() {
-		moreinfo.click();
-		
-	}
 	
-	public void clickTheNewNews() {
+
+	public ManageNewsPage clickTheNewNews() {
 		newnews.click();
+		return this;
 		
+
 	}
-	
-	public void enterNews() {
+
+	public ManageNewsPage enterNews() {
 		enternews.sendKeys("New News");
-		
+		return this;
+
 	}
-	
-	public void saveNews() {
+
+	public ManageNewsPage saveNews() {
 		savenews.click();
-		
-		
+		return this;
+
 	}
 
 }

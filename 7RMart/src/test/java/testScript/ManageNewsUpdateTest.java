@@ -5,51 +5,66 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import pages.AdminUserPage;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNewsUpdatePage;
 import utilities.ExcelUtility;
 
-public class ManageNewsUpdateTest extends Base{
+public class ManageNewsUpdateTest extends Base {
 	
+	public ManageNewsUpdatePage managenewsupdatepage;
+	public HomePage homepage;
+
 	@Test
 	public void updateNews() throws IOException {
-		
-		//String username = "admin";
-		//String password = "admin";
+
+		// String username = "admin";
+		// String password = "admin";
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
+		
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUsername(username).enterThePassword(password);
+		homepage = loginpage.clickOnSignin();
+		managenewsupdatepage = homepage.clickNewsUpdateMoreInfo();
+		String updatenews = "latest";
+		managenewsupdatepage.clickTheActions().enterNews(updatenews).saveNews();
+		
+		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();
+
 		
-		String updatenews = "latest";
 		ManageNewsUpdatePage newsupdate = new ManageNewsUpdatePage(driver);
 		newsupdate.clickTheMoreInfo();
 		newsupdate.clickTheActions();
 		newsupdate.enterNews(updatenews);
-		newsupdate.saveNews();
-		
+		newsupdate.saveNews();*/
+
 	}
-	
+
 	@Test
 	public void isUpdateDisplayed() {
-		
+
 		String username = "admin";
 		String password = "admin";
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		homepage = loginpage.clickOnSignin();
+		managenewsupdatepage = homepage.clickNewsUpdateMoreInfo();
+		managenewsupdatepage.clickTheActions();
+		
+		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();
-		
-		
+
 		ManageNewsUpdatePage newsupdate = new ManageNewsUpdatePage(driver);
 		newsupdate.clickTheMoreInfo();
-		newsupdate.clickTheActions();
-		
-		boolean updatednews = newsupdate.isUpdateDislayed();
+		newsupdate.clickTheActions();*/
+
+		boolean updatednews = managenewsupdatepage.isUpdateDislayed();
 		Assert.assertTrue(updatednews);
-		
+
 	}
 
 }

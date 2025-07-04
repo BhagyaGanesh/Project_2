@@ -5,24 +5,37 @@ import java.io.IOException;
 import org.testng.annotations.Test;
 
 import pages.AdminUserPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
-public class AdminUserTest extends Base{
+public class AdminUserTest extends Base {
 	
+	public AdminUserPage adminuserpage;
+	public HomePage homepage;
+
 	@Test
-    public void addAdmin() throws IOException {
-		
-		//String username = "admin";
-		//String password = "admin";
+	public void addAdmin() throws IOException {
+
+		// String username = "admin";
+		// String password = "admin";
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
-		
+
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterTheUsername(username);
+		loginpage.enterTheUsername(username).enterThePassword(password);
+		homepage = loginpage.clickOnSignin();
+		adminuserpage = homepage.clickMoreInfo();
+		FakerUtility fakerutility = new FakerUtility();
+		String adminusername = fakerutility.creatARandomFirstName();
+		String adminpassword = fakerutility.creatARandomFirstName();
+		adminuserpage.clickNewAdmin().giveAdminName(adminusername).giveAdminPass(adminpassword).admintype().saveAdmin();
+		
+		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();
-		
+
 		String adminusername = "First user";
 		String adminpassword = "First password";
 		AdminUserPage adminuserpage = new AdminUserPage(driver);
@@ -31,7 +44,7 @@ public class AdminUserTest extends Base{
 		adminuserpage.giveAdminName(adminusername);
 		adminuserpage.giveAdminPass(adminpassword);
 		adminuserpage.admintype();
-		adminuserpage.saveAdmin();
+		adminuserpage.saveAdmin();*/
 
-}
+	}
 }
