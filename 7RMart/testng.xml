@@ -11,10 +11,10 @@
 			<class name="testScript.AdminUserUpdateTest" />-->
 			 <class name="testScript.ManageFooterTextTest" />
 			<class name="testScript.ManageContactTest" />
-			<class name="testScript.ManageCategoryTest" />
+			
 			<class name="testScript.ManageNewsTest" />
 			<class name="testScript.AdminUserTest" />
-			
+			<class name="testScript.ManageCategoryTest" />
 			<class name="testScript.HomePageTest" />
 			<class name="testScript.LoginTest" /> 
 			
