@@ -8,14 +8,16 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<!--<class name="testScript.ManageNewsUpdateTest" />
+			<class name="testScript.AdminUserUpdateTest" />-->
 			 <class name="testScript.ManageFooterTextTest" />
 			<class name="testScript.ManageContactTest" />
 			<class name="testScript.ManageCategoryTest" />
 			<class name="testScript.ManageNewsTest" />
 			<class name="testScript.AdminUserTest" />
-			<class name="testScript.AdminUserUpdateTest" />
+			
 			<class name="testScript.HomePageTest" />
-			<class name="testScript.LoginTest" />--> 
+			<class name="testScript.LoginTest" /> 
+			
 		</classes>
 	</test> <!--
 	Test -->

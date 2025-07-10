@@ -62,7 +62,7 @@ public class Base {
 
 	}
 
-	// @AfterMethod
+	 @AfterMethod
 	public void browserQuit(ITestResult iTestResult) throws IOException {
 
 		if (iTestResult.getStatus() == ITestResult.FAILURE) {
