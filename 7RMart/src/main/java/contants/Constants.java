@@ -18,5 +18,6 @@ public class Constants {
     public static final String MANAGEFOOTERTESTUPDATEFOOTER= "Manage Footer information not updated as expected";
     public static final String MANAGENEWSTESTENTERNEWS= "News information not displayed as expected";
     public static final String MANAGENEWSTESTUPDATENEWS= "News information not updated as expected";
+    public static final String MANAGENEWSTESTUPDATETDISPLAY= "update is not displayed as expected";
 
 }

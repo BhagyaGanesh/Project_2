@@ -47,7 +47,7 @@ public class ManageNewsUpdateTest extends Base {
 
 	}
 
-	@Test
+	@Test(description="To verify that an authorized user is able to successfully update the 'News' information")
 	public void isUpdateDisplayed() {
 
 		String username = "admin";
@@ -66,7 +66,7 @@ public class ManageNewsUpdateTest extends Base {
 		newsupdate.clickTheActions();*/
 
 		boolean updatednews = managenewsupdatepage.isUpdateDislayed();
-		Assert.assertTrue(updatednews,Constants.MANAGENEWSTESTUPDATENEWS);
+		Assert.assertTrue(updatednews,Constants.MANAGENEWSTESTUPDATETDISPLAY);
 
 	}
 
