@@ -30,8 +30,6 @@ public class AdminUserPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	
-
 	public AdminUserPage clickNewAdmin() {
 		newadmin.click();
 		return this;

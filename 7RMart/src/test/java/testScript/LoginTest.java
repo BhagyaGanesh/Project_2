@@ -15,7 +15,7 @@ public class LoginTest extends Base {
 	
 	public HomePage homepage;
 
-	@Test(retryAnalyzer = retry.Retry.class, groups = {"Regression"})
+	@Test(retryAnalyzer = retry.Retry.class, groups = {"Regression"},description = "To verify that a user can successfully log in to the application when entering valid login credentials")
 	public void verifyTheUserIsAbleToLoginUsingValidCredentials() throws IOException {
 
 		// String username = "admin";
@@ -48,7 +48,7 @@ public class LoginTest extends Base {
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();*/
 		boolean alertmsgappear = loginpage.isAlertMsgDislayed();
-		Assert.assertTrue(alertmsgappear, "Home page is loaded with incorrect password");
+		Assert.assertTrue(alertmsgappear, Constants.LOGINTESTINVALIDUSERNAME);
 
 	}
 
@@ -67,7 +67,7 @@ public class LoginTest extends Base {
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();*/
 		boolean alertmsgappear = loginpage.isAlertMsgDislayed();
-		Assert.assertTrue(alertmsgappear, "Home page is loaded with incorrect password");
+		Assert.assertTrue(alertmsgappear, Constants.LOGINTESTINVALIDPASSWORD);
 
 	}
 
@@ -87,7 +87,7 @@ public class LoginTest extends Base {
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();*/
 		boolean alertmsgappear = loginpage.isAlertMsgDislayed();
-		Assert.assertTrue(alertmsgappear, "Home page is loaded with incorrect password");
+		Assert.assertTrue(alertmsgappear, Constants.LOGINTESTINVALIDCREDENTIALS);
 	}
 	
 	@DataProvider(name = "logindataprovider")

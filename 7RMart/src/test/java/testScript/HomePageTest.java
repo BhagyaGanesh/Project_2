@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.LoginPage;
 import pages.HomePage;
 import utilities.ExcelUtility;
@@ -13,7 +14,7 @@ public class HomePageTest extends Base {
 	
 	public HomePage homepage;
 
-	@Test
+	@Test(description="Verify user can log out and is redirected to the login page.")
 	public void verifyUserIsAbleToLogout() throws IOException {
 
 		// String username = "admin";
@@ -34,7 +35,7 @@ public class HomePageTest extends Base {
 		logoutpage.chooseLogout();*/
 
 		boolean signpage = homepage.signinPageDisplayed();
-		Assert.assertTrue(signpage);
+		Assert.assertTrue(signpage,Constants.HOMEPAGETESTCHECKLOGOUT);
 	}
 
 }

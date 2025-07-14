@@ -27,6 +27,8 @@ public class ManageCategoryPage {
 	WebElement image;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement save;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertmsg;
 
 	public ManageCategoryPage(WebDriver driver) {
 		this.driver = driver;
@@ -76,6 +78,9 @@ public class ManageCategoryPage {
 		// save.click();
 		return this;
 
+	}
+	public boolean isAlertMessageIsDisplayed() {
+		return alertmsg.isDisplayed();
 	}
 
 }

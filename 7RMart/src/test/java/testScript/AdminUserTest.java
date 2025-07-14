@@ -17,7 +17,7 @@ public class AdminUserTest extends Base {
 	public AdminUserPage adminuserpage;
 	public HomePage homepage;
 
-	@Test
+	@Test(description = "Verify that an authorized user can create a new Admin account via user management.")
 	public void addAdmin() throws IOException {
 
 		// String username = "admin";
@@ -34,7 +34,7 @@ public class AdminUserTest extends Base {
 		String adminpassword = fakerutility.creatARandomFirstName();
 		adminuserpage.clickNewAdmin().giveAdminName(adminusername).giveAdminPass(adminpassword).admintype().saveAdmin();
 		boolean alertmsg = adminuserpage.isAlertMsgDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,Constants.ADMINUSERSTESTCREATEUSERS);
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();

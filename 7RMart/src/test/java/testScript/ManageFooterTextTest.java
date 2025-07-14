@@ -17,7 +17,7 @@ public class ManageFooterTextTest extends Base {
 	public ManageFooterTextPage managefootertextpage;
 	public HomePage homepage;
 
-	@Test
+	@Test(description="To verify that an authorized user is able to successfully update the 'Manage Footer Text' information")
 	public void updateDetails() throws IOException {
 
 		// String username = "admin";
@@ -33,7 +33,7 @@ public class ManageFooterTextTest extends Base {
 		String userphone = "2345654356";
 		managefootertextpage.clickTheAction().addAddress(useraddress).addEmail(useremail).addPhone(userphone).clickUpdate();
 		boolean alertmsg = managefootertextpage.isAlertMsgDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,Constants.MANAGEFOOTERTESTUPDATEFOOTER);
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();

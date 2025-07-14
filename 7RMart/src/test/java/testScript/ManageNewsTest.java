@@ -17,7 +17,7 @@ public class ManageNewsTest extends Base {
 	public ManageNewsPage managenewspage;
 	public HomePage homepage;
 
-	@Test
+	@Test(description="To verify that an authorized user is able to successfully Enter the 'News' information")
 	public void addNews() throws IOException {
 		// String username = "admin";
 		// String password = "admin";
@@ -29,7 +29,7 @@ public class ManageNewsTest extends Base {
 		managenewspage = homepage.clickTheMoreInfo();
 		managenewspage.clickTheNewNews().enterNews().saveNews();
 		boolean alertmsg = managenewspage.isAlertMsgDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,Constants.MANAGENEWSTESTENTERNEWS);
 		
 		
 		

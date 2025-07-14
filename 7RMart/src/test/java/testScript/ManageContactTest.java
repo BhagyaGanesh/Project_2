@@ -17,7 +17,7 @@ public class ManageContactTest extends Base {
 	public ManageContactPage managecontactpage;
 	public HomePage homepage;
 
-	@Test
+	@Test(description="To verify that an authorized user is able to successfully update the 'Contact Us' information")
 	public void addContactInfo() throws IOException {
 
 		// String username = "admin";
@@ -35,7 +35,7 @@ public class ManageContactTest extends Base {
 		String charge = "20";
 		managecontactpage.clickTheAction().addPhoneNo(userphone).addEmail(useremail).addAddress(useraddress).addDeliveryTime(time).addDeliveryCharge(charge).clickUpdate();
 		boolean alertmsg = managecontactpage.isAlertMsgDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,Constants.MANAGECONTACTTESTUPDATECONTACT);
 		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
@@ -54,7 +54,7 @@ public class ManageContactTest extends Base {
 
 	}
 
-	@Test
+	@Test(description="To verify that an authorized user is able to successfully display the 'Contact Us' information")
 	public void isUpdateDisplayed() {
 
 		String username = "admin";
@@ -73,7 +73,7 @@ public class ManageContactTest extends Base {
 		managecontact.clickTheAction();*/
 
 		boolean updatepresent = managecontactpage.isUpdateDislayed();
-		Assert.assertTrue(updatepresent);
+		Assert.assertTrue(updatepresent,Constants.MANAGECONTACTTESTDISPLAYCONTACT);
 
 	}
 

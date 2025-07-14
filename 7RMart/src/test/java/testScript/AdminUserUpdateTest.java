@@ -48,7 +48,7 @@ public class AdminUserUpdateTest extends Base {
 		updateadmin.saveAdmin();*/
 	}
 
-	@Test
+	@Test(description = "Verify that an authorized user can update a new Admin account via user management.")
 	public void isUpdateDisplayed() {
 
 		String username = "admin";
@@ -69,7 +69,7 @@ public class AdminUserUpdateTest extends Base {
 		adminupdate.clickAction();*/
 
 		boolean updatedadmin = adminuserupdatepage.isUpdateDislayed();
-		Assert.assertTrue(updatedadmin);
+		Assert.assertTrue(updatedadmin,Constants.ADMINUSERSTESTUPDATEUSERS);
 
 	}
 

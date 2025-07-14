@@ -3,8 +3,10 @@ package testScript;
 import java.awt.AWTException;
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -16,7 +18,7 @@ public class ManageCategoryTest extends Base {
 	public ManageCategoryPage managecategorypage;
 	public HomePage homepage;
 
-	@Test
+	@Test(description="Verify that an authorized user can successfully add a new category via the category management module.")
 	public void addCategory() throws AWTException, IOException {
 
 		// String username = "admin";
@@ -30,6 +32,8 @@ public class ManageCategoryTest extends Base {
 		managecategorypage = homepage.clickCateMoreInfo();
 		String newcategory = "gem stone";
 		managecategorypage.clickNew().EnterCategory(newcategory).selectGroup().chooseImage().clickSave();
+		boolean alertmsg = managecategorypage.isAlertMessageIsDisplayed();
+		Assert.assertTrue(alertmsg,Constants.MANAGECATEGORYTESTADDCATEGORY);
 		
 		
 		/*loginpage.enterTheUsername(username);

@@ -17,7 +17,7 @@ public class ManageNewsUpdateTest extends Base {
 	public ManageNewsUpdatePage managenewsupdatepage;
 	public HomePage homepage;
 
-	@Test
+	@Test(description="To verify that an authorized user is able to successfully update the 'News' information")
 	public void updateNews() throws IOException {
 
 		// String username = "admin";
@@ -32,7 +32,7 @@ public class ManageNewsUpdateTest extends Base {
 		String updatenews = "latest";
 		managenewsupdatepage.clickTheActions().enterNews(updatenews).saveNews();
 		boolean alertmsg = managenewsupdatepage.isAlertMsgDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,Constants.MANAGENEWSTESTUPDATENEWS);
 		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
@@ -66,7 +66,7 @@ public class ManageNewsUpdateTest extends Base {
 		newsupdate.clickTheActions();*/
 
 		boolean updatednews = managenewsupdatepage.isUpdateDislayed();
-		Assert.assertTrue(updatednews);
+		Assert.assertTrue(updatednews,Constants.MANAGENEWSTESTUPDATENEWS);
 
 	}
 
