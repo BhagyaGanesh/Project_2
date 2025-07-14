@@ -3,9 +3,7 @@
 <suite name="Suite">
 
 	<parameter name="browser" value="chrome"></parameter>
-	<listeners>
-		<listener class-name="generateReport.Listeners"></listener>
-	</listeners>
+	
 	<test name="ChromeTest">
 		<groups>
 			<run>

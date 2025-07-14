@@ -26,6 +26,9 @@ public class ManageContactPage {
 	WebElement deliverycharge;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement update;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertmsg;
+
 
 	public ManageContactPage(WebDriver driver) {
 		this.driver = driver;
@@ -85,6 +88,10 @@ public class ManageContactPage {
 
 	public boolean isUpdateDislayed() {
 		return update.isDisplayed();
+	}
+	
+	public boolean isAlertMsgDisplayed() {
+		return alertmsg.isDisplayed();
 	}
 
 }

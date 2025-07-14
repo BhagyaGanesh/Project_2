@@ -16,6 +16,9 @@ public class ManageNewsPage {
 	WebElement enternews;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement savenews;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertmsg;
+
 
 	public ManageNewsPage(WebDriver driver) {
 		this.driver = driver;
@@ -41,6 +44,9 @@ public class ManageNewsPage {
 		savenews.click();
 		return this;
 
+	}
+	public boolean isAlertMsgDisplayed() {
+		return alertmsg.isDisplayed();
 	}
 
 }

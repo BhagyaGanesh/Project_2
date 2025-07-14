@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -30,6 +31,8 @@ public class ManageNewsUpdateTest extends Base {
 		managenewsupdatepage = homepage.clickNewsUpdateMoreInfo();
 		String updatenews = "latest";
 		managenewsupdatepage.clickTheActions().enterNews(updatenews).saveNews();
+		boolean alertmsg = managenewsupdatepage.isAlertMsgDisplayed();
+		Assert.assertTrue(alertmsg);
 		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);

@@ -2,8 +2,10 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -31,7 +33,8 @@ public class AdminUserTest extends Base {
 		String adminusername = fakerutility.creatARandomFirstName();
 		String adminpassword = fakerutility.creatARandomFirstName();
 		adminuserpage.clickNewAdmin().giveAdminName(adminusername).giveAdminPass(adminpassword).admintype().saveAdmin();
-		
+		boolean alertmsg = adminuserpage.isAlertMsgDisplayed();
+		Assert.assertTrue(alertmsg);
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();

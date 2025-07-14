@@ -22,6 +22,8 @@ public class AdminUserUpdatePage {
 	WebElement admintype;
 	@FindBy(xpath = "//button[@name='Update']")
 	WebElement updateadmin;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertmsg;
 
 	public AdminUserUpdatePage(WebDriver driver) {
 		this.driver = driver;
@@ -66,6 +68,9 @@ public class AdminUserUpdatePage {
 
 	public boolean isUpdateDislayed() {
 		return updateadmin.isDisplayed();
+	}
+	public boolean isAlertMsgDisplayed() {
+		return alertmsg.isDisplayed();
 	}
 
 }

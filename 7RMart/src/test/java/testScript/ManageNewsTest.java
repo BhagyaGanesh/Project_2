@@ -2,8 +2,10 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -26,6 +28,8 @@ public class ManageNewsTest extends Base {
 		homepage = loginpage.clickOnSignin();
 		managenewspage = homepage.clickTheMoreInfo();
 		managenewspage.clickTheNewNews().enterNews().saveNews();
+		boolean alertmsg = managenewspage.isAlertMsgDisplayed();
+		Assert.assertTrue(alertmsg);
 		
 		
 		

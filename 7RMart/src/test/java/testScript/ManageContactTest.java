@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -33,7 +34,8 @@ public class ManageContactTest extends Base {
 		String time = "1-2pm";
 		String charge = "20";
 		managecontactpage.clickTheAction().addPhoneNo(userphone).addEmail(useremail).addAddress(useraddress).addDeliveryTime(time).addDeliveryCharge(charge).clickUpdate();
-		
+		boolean alertmsg = managecontactpage.isAlertMsgDisplayed();
+		Assert.assertTrue(alertmsg);
 		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);

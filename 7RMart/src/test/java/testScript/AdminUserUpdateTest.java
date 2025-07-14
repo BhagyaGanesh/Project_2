@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.AdminUserPage;
 import pages.AdminUserUpdatePage;
 import pages.HomePage;
@@ -32,6 +33,8 @@ public class AdminUserUpdateTest extends Base {
 		String adminusername = "Dell";
 		String adminpassword = "Laptop";
 		adminuserupdatepage.clickAction().giveAdminName(adminusername).giveAdminPass(adminpassword).saveAdmin();
+		boolean alertmsg = adminuserupdatepage.isAlertMsgDisplayed();
+		Assert.assertTrue(alertmsg);
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();

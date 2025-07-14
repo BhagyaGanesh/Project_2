@@ -22,6 +22,8 @@ public class AdminUserPage {
 	WebElement admintype;
 	@FindBy(xpath = "//button[@name='Create']")
 	WebElement saveadmin;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertmsg;
 
 	public AdminUserPage(WebDriver driver) {
 		this.driver = driver;
@@ -54,6 +56,9 @@ public class AdminUserPage {
 	public AdminUserPage saveAdmin() {
 		saveadmin.click();
 		return this;
+	}
+	public boolean isAlertMsgDisplayed() {
+		return alertmsg.isDisplayed();
 	}
 
 }

@@ -20,6 +20,8 @@ public class ManageFooterTextPage {
 	WebElement phone;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement update;
+	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
+	WebElement alertmsg;
 
 	public ManageFooterTextPage(WebDriver driver) {
 		this.driver = driver;
@@ -58,6 +60,9 @@ public class ManageFooterTextPage {
 
 		update.click();
 		return this;
+	}
+	public boolean isAlertMsgDisplayed() {
+		return alertmsg.isDisplayed();
 	}
 
 }

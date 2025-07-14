@@ -2,8 +2,10 @@ package testScript;
 
 import java.io.IOException;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import contants.Constants;
 import pages.AdminUserPage;
 import pages.HomePage;
 import pages.LoginPage;
@@ -30,7 +32,8 @@ public class ManageFooterTextTest extends Base {
 		String useremail = "sony@gmail.com";
 		String userphone = "2345654356";
 		managefootertextpage.clickTheAction().addAddress(useraddress).addEmail(useremail).addPhone(userphone).clickUpdate();
-		
+		boolean alertmsg = managefootertextpage.isAlertMsgDisplayed();
+		Assert.assertTrue(alertmsg);
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();

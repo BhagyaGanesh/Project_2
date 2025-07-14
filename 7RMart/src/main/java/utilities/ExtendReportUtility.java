@@ -8,12 +8,12 @@ public class ExtendReportUtility {
 	public static final ExtentReports extentReports = new ExtentReports();
 
 	public synchronized static ExtentReports createExtentReports() {
-		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");// location of report
-		reporter.config().setReportName("7RMart");// report name
-		extentReports.attachReporter(reporter);// attached to generate report
+		ExtentSparkReporter reporter = new ExtentSparkReporter("./extent-reports/extent-report.html");
+		reporter.config().setReportName("7RMart");
+		extentReports.attachReporter(reporter);
 		extentReports.setSystemInfo("Organization", "Obsqura");
 		extentReports.setSystemInfo("Name", "Bhagya");
-		return extentReports;// becz this method is returning report
+		return extentReports;
 	}
 
 }

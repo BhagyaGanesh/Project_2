@@ -5,10 +5,10 @@
 	<groupId>obsqura.com</groupId>
 	<artifactId>7RMart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<build> 											<!-- [Maven, maven-compiler , maven-surefire] - plugins -->
+	<build> 											
 		<plugins>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId> 		<!--maven ayite connect chyn ane maven-complier and maven - surefire -->
+				<groupId>org.apache.maven.plugins</groupId> 		
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.1</version>
 				<configuration>
