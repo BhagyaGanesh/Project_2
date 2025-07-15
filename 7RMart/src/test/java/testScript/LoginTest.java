@@ -18,17 +18,18 @@ public class LoginTest extends Base {
 	@Test(retryAnalyzer = retry.Retry.class, groups = {"Regression"},description = "To verify that a user can successfully log in to the application when entering valid login credentials")
 	public void verifyTheUserIsAbleToLoginUsingValidCredentials() throws IOException {
 
-		// String username = "admin";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
+		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();*/
+		
 		boolean dashboardloaded = loginpage.isDashboardDisplayed();
 		Assert.assertTrue(dashboardloaded, Constants.LOGINTESTVALIDCREDENTIALS);
 	}
@@ -36,17 +37,18 @@ public class LoginTest extends Base {
 	@Test(description = "Login on giving username incorrect")
 	public void verifyAlertMessageIsComingOnGivingInvalidUsername() throws IOException {
 
-		// String username = "admin405";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(2, 0, "loginpage");
 		String password = ExcelUtility.getStringData(2, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
+		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();*/
+		
 		boolean alertmsgappear = loginpage.isAlertMsgDislayed();
 		Assert.assertTrue(alertmsgappear, Constants.LOGINTESTINVALIDUSERNAME);
 
@@ -55,17 +57,18 @@ public class LoginTest extends Base {
 	@Test(description = "Login on giving password incorrect")
 	public void verifyAlertMessageIsComingOnGivingInvalidPassword() throws IOException {
 
-		// String username = "admin";
-		// String password = "admin563";
+		
 		String username = ExcelUtility.getStringData(3, 0, "loginpage");
 		String password = ExcelUtility.getStringData(3, 1, "loginpage");
 
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
+		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();*/
+		
 		boolean alertmsgappear = loginpage.isAlertMsgDislayed();
 		Assert.assertTrue(alertmsgappear, Constants.LOGINTESTINVALIDPASSWORD);
 
@@ -86,6 +89,7 @@ public class LoginTest extends Base {
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();*/
+		
 		boolean alertmsgappear = loginpage.isAlertMsgDislayed();
 		Assert.assertTrue(alertmsgappear, Constants.LOGINTESTINVALIDCREDENTIALS);
 	}

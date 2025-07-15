@@ -12,6 +12,7 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageCategoryPage;
 import utilities.ExcelUtility;
+import utilities.FakerUtility;
 
 public class ManageCategoryTest extends Base {
 	
@@ -21,8 +22,7 @@ public class ManageCategoryTest extends Base {
 	@Test(description="Verify that an authorized user can successfully add a new category via the category management module.")
 	public void addCategory() throws AWTException, IOException {
 
-		// String username = "admin";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
@@ -30,7 +30,9 @@ public class ManageCategoryTest extends Base {
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
 		managecategorypage = homepage.clickCateMoreInfo();
-		String newcategory = "gem stone";
+		//String newcategory = "gem stone";
+		FakerUtility fakerutility = new FakerUtility();
+		String newcategory = fakerutility.creatARandomFirstName();
 		managecategorypage.clickNew().EnterCategory(newcategory).selectGroup().chooseImage().clickSave();
 		boolean alertmsg = managecategorypage.isAlertMessageIsDisplayed();
 		Assert.assertTrue(alertmsg,Constants.MANAGECATEGORYTESTADDCATEGORY);

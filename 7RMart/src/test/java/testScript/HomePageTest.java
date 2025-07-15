@@ -17,8 +17,7 @@ public class HomePageTest extends Base {
 	@Test(description="Verify user can log out and is redirected to the login page.")
 	public void verifyUserIsAbleToLogout() throws IOException {
 
-		// String username = "admin";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
@@ -26,11 +25,12 @@ public class HomePageTest extends Base {
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
 		homepage.chooseAdmin().chooseLogout();
+		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();
 
-		HomePage logoutpage = new HomePage(driver);
+		HomePage homepage = new HomePage(driver);
 		logoutpage.chooseAdmin();
 		logoutpage.chooseLogout();*/
 

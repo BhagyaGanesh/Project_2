@@ -18,11 +18,10 @@ public class AdminUserUpdateTest extends Base {
 	public AdminUserUpdatePage adminuserupdatepage;
 	public HomePage homepage;
 
-	@Test
+	@Test(description = "Verify that an authorized user can update a new Admin account via user management.")
 	public void updateAdmin() throws IOException {
 
-		// String username = "admin";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
@@ -30,11 +29,12 @@ public class AdminUserUpdateTest extends Base {
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
 		adminuserupdatepage = homepage.clickadminMoreInfo();
-		String adminusername = "Dell";
-		String adminpassword = "Laptop";
+		String adminusername = ExcelUtility.getStringData(1, 0, "loginpage");
+		String adminpassword = ExcelUtility.getStringData(1, 1, "loginpage");
 		adminuserupdatepage.clickAction().giveAdminName(adminusername).giveAdminPass(adminpassword).saveAdmin();
 		boolean alertmsg = adminuserupdatepage.isAlertMsgDisplayed();
-		Assert.assertTrue(alertmsg);
+		Assert.assertTrue(alertmsg,Constants.ADMINUSERSTESTUPDATEUSERS);
+		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();
@@ -48,11 +48,14 @@ public class AdminUserUpdateTest extends Base {
 		updateadmin.saveAdmin();*/
 	}
 
-	@Test(description = "Verify that an authorized user can update a new Admin account via user management.")
-	public void isUpdateDisplayed() {
+	@Test(description="To verify that update button is displayed")
+	public void isUpdateDisplayed() throws IOException {
 
-		String username = "admin";
-		String password = "admin";
+		
+		
+		String username = ExcelUtility.getStringData(1, 0, "loginpage");
+		String password = ExcelUtility.getStringData(1, 1, "loginpage");
+
 		
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
@@ -69,7 +72,7 @@ public class AdminUserUpdateTest extends Base {
 		adminupdate.clickAction();*/
 
 		boolean updatedadmin = adminuserupdatepage.isUpdateDislayed();
-		Assert.assertTrue(updatedadmin,Constants.ADMINUSERSTESTUPDATEUSERS);
+		Assert.assertTrue(updatedadmin,Constants.ADMINUSERTESTUPDATETDISPLAY);
 
 	}
 

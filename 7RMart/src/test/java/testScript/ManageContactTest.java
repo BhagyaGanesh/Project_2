@@ -20,19 +20,20 @@ public class ManageContactTest extends Base {
 	@Test(description="To verify that an authorized user is able to successfully update the 'Contact Us' information")
 	public void addContactInfo() throws IOException {
 
-		// String username = "admin";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
 		managecontactpage = homepage.clickManageContact();
-		String userphone = "2345654356";
-		String useremail = "sony@gmail.com";
-		String useraddress = "FlatNo.300 Trivandrum";
-		String time = "1-2pm";
-		String charge = "20";
+		
+		String userphone = ExcelUtility.getStringData(1, 0, "managecontactpage");
+		String useremail = ExcelUtility.getStringData(1, 1, "managecontactpage");
+		String useraddress = ExcelUtility.getStringData(1, 2, "managecontactpage");
+		String time = ExcelUtility.getStringData(1, 3, "managecontactpage");
+		String charge = ExcelUtility.getStringData(1, 4, "managecontactpage");
+		
 		managecontactpage.clickTheAction().addPhoneNo(userphone).addEmail(useremail).addAddress(useraddress).addDeliveryTime(time).addDeliveryCharge(charge).clickUpdate();
 		boolean alertmsg = managecontactpage.isAlertMsgDisplayed();
 		Assert.assertTrue(alertmsg,Constants.MANAGECONTACTTESTUPDATECONTACT);
@@ -55,15 +56,16 @@ public class ManageContactTest extends Base {
 	}
 
 	@Test(description="To verify that an authorized user is able to successfully display the 'Contact Us' information")
-	public void isUpdateDisplayed() {
+	public void isUpdateDisplayed() throws IOException {
 
-		String username = "admin";
-		String password = "admin";
+		String username = ExcelUtility.getStringData(1, 0, "loginpage");
+		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterTheUsername(username).enterThePassword(password);
 		homepage = loginpage.clickOnSignin();
 		managecontactpage = homepage.clickManageContact();
 		managecontactpage.clickTheAction();
+		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();

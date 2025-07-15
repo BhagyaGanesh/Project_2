@@ -19,8 +19,7 @@ public class ManageNewsTest extends Base {
 
 	@Test(description="To verify that an authorized user is able to successfully Enter the 'News' information")
 	public void addNews() throws IOException {
-		// String username = "admin";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);

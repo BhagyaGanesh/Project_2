@@ -20,8 +20,7 @@ public class AdminUserTest extends Base {
 	@Test(description = "Verify that an authorized user can create a new Admin account via user management.")
 	public void addAdmin() throws IOException {
 
-		// String username = "admin";
-		// String password = "admin";
+		
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 
@@ -35,6 +34,7 @@ public class AdminUserTest extends Base {
 		adminuserpage.clickNewAdmin().giveAdminName(adminusername).giveAdminPass(adminpassword).admintype().saveAdmin();
 		boolean alertmsg = adminuserpage.isAlertMsgDisplayed();
 		Assert.assertTrue(alertmsg,Constants.ADMINUSERSTESTCREATEUSERS);
+		
 		/*loginpage.enterTheUsername(username);
 		loginpage.enterThePassword(password);
 		loginpage.clickOnSignin();

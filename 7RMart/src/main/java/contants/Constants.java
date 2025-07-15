@@ -11,6 +11,7 @@ public class Constants {
     public static final String LOGINTESTINVALIDCREDENTIALS="Home Page is Not Loaded With Incorrect Username and Password";
     public static final String ADMINUSERSTESTCREATEUSERS="User is failed to create the username and the password";
     public static final String ADMINUSERSTESTUPDATEUSERS="Admin Users information not updated as expected";
+    public static final String ADMINUSERTESTUPDATETDISPLAY= "update is not displayed as expected";
     public static final String HOMEPAGETESTCHECKLOGOUT= "Logout failed. Please try again";
     public static final String MANAGECATEGORYTESTADDCATEGORY= "Failed to add category: 'New Category' not found in the list after addition";
     public static final String MANAGECONTACTTESTUPDATECONTACT = "Contact information not updated as expected";
